@@ -16,7 +16,7 @@ disableScroll()
 
   return (
       <div id={viewingCart === true ? "disable-scroll" : null}>
-        <Router basename='/DealKings' >
+        <Router>
           <Navbar/>
           <Routes>
               <Route element={<Homepage/>} path='/'/>
