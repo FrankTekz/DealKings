@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import './App.css';
+import Homepage from './Homepage';
+import Checkout from './Checkout';
+import Navbar from './Navbar';
+import ProductPage from './ProductPage';
+import Error from './ErrorPage';
+import { useCartContext } from './CartContext';
+
 
 function App() {
+const {viewingCart, disableScroll} = useCartContext()
+
+disableScroll()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div id={viewingCart === true ? "disable-scroll" : null}>
+        <Router basename='/'>
+          <Navbar/>
+          <Routes>
+              <Route element={<Homepage/>} path='/'/>
+              <Route element={<Checkout/>} exact path='/checkout'/>
+              <Route element={<ProductPage/>} path="/products/:productId"/>
+              <Route element={<Error/>} path='/*' />
+            </Routes>
+          </Router>
+      </div>
   );
 }
 
