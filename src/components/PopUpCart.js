@@ -1,6 +1,6 @@
 import React from "react";
 import PopUpProds from "./PopUpProds";
-import { useCartContext } from "./CartContext";
+import { useCartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 export default function PopUpCart(){

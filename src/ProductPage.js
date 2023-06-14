@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useCartContext } from "./CartContext";
-import { useProductsContext } from "./ProductsContext";
+import { useCartContext } from "./context/CartContext";
+import { useProductsContext } from "./context/ProductsContext";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import useQuantity from "./useQuantity";
-import useItemAdded from "./useItemAdded";
+import useQuantity from "./hooks/useQuantity";
+import useItemAdded from "./hooks/useItemAdded";
 
 export default function ProductPage(){
     const {productId} = useParams()
@@ -26,13 +26,13 @@ export default function ProductPage(){
         setItemAdded(prevState => !prevState)
     }
 
-    const testingImage = (event) => {
+    const imageSrc = (event) => {
         setThumbnail(event.target.src)
     }
     
     const productImages = thisProduct.images.map(image => {
         return(
-            <img className="change-image" src={image} onClick={testingImage} alt=''/>
+            <img className="change-image" src={image} onClick={imageSrc} alt=''/>
         )
     })
 
@@ -84,13 +84,9 @@ export default function ProductPage(){
                             <Link className="pp-links" to='/'>continue shopping</Link>
                             <Link className="pp-links" to='/checkout'>checkout</Link>
                         </div>
-                        
                     </div>
                 </div>
-                
             </div>
-            
-            
         </div>
     )
 }

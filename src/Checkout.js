@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import ProductCheckout from "./ProductCheckout";
-import { useCartContext } from "./CartContext";
+import ProductCheckout from "./components/ProductCheckout";
+import { useCartContext } from "./context/CartContext";
 import { Link } from "react-router-dom";
 
 export default function Checkout(){
@@ -8,13 +8,11 @@ export default function Checkout(){
     const [buttonClicked, setButtonClick] = useState(false)
     const [orderPlaced, setOrderPlaced] = useState(false)
 
-    console.log(cartItems, 'cart')
-
     const cartProducts = cartItems.map(item => {
         return(
         <ProductCheckout
             id={item.id}
-            thumbnail={item.thumbnail}
+            thumbnail={item.images[0]}
             title={item.title}
             brand={item.brand}             
             price={item.price}

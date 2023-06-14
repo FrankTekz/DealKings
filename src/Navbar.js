@@ -1,5 +1,5 @@
 import React from "react";
-import smileyLogo from './images/smiley.png'
+import crown from './images/crown.png'
 import { Link } from "react-router-dom";
 
 export default function Navbar(){
@@ -7,7 +7,7 @@ export default function Navbar(){
     return(
         <div id="navbar">
             <div id="site-name">
-                <img src={smileyLogo} alt=''/>
+                <img src={crown} alt=''/>
                 <h1>DealKings</h1>
             </div>
             

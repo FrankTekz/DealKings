@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
-import ProductCard from "./ProductCard";
-import FilterMenu from "./FilterMenu";
-import { useProductsContext } from "./ProductsContext";
-import { useCartContext } from "./CartContext";
+import ProductCard from "./components/ProductCard";
+import FilterMenu from "./components/FilterMenu";
+import { useProductsContext } from "./context/ProductsContext";
+import { useCartContext } from "./context/CartContext";
 import cartImg from './images/cartImage.png'
 import flowChart from './images/flowchart.png'
-import PopUpCart from "./PopUpCart";
+import PopUpCart from "./components/PopUpCart";
+
 
 export default function Homepage(){
     const {displayedData, setDisplayedData, productData} = useProductsContext()
@@ -41,7 +42,7 @@ export default function Homepage(){
 
     const applyFilters = () => {
         let updatedList = productData;
-        // Cuisine Filter
+        // Category Filter
         const categoriesChecked = categories
             .filter((item) => item.checked)
             .map((item) => item.label);
@@ -51,14 +52,13 @@ export default function Homepage(){
             categoriesChecked.includes(item.category)
             )
         }
-
+        //Price Filter
         const minPrice = selectedPrice[0]
         const maxPrice = selectedPrice[1]
 
         updatedList = updatedList.filter(
             (item) => item.price >= minPrice && item.price <= maxPrice
         )
-            console.log(updatedList)
             setDisplayedData(updatedList)
     }
         

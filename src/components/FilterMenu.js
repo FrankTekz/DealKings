@@ -1,6 +1,6 @@
 import React from "react";
-import CheckboxProton from "./FilterFeatures/CheckboxProton";
-import SliderProton from "./FilterFeatures/SliderProton";
+import CheckboxProton from "./CheckboxProton";
+import SliderProton from "./SliderProton";
 
 
 export default function FilterMenu({categories, changeChecked, selectedPrice, changePrice}){

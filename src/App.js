@@ -6,7 +6,7 @@ import Checkout from './Checkout';
 import Navbar from './Navbar';
 import ProductPage from './ProductPage';
 import Error from './ErrorPage';
-import { useCartContext } from './CartContext';
+import { useCartContext } from './context/CartContext';
 
 
 function App() {

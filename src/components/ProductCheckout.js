@@ -1,9 +1,8 @@
 import React from "react";
-import { useCartContext } from "./CartContext";
+import { useCartContext } from "../context/CartContext";
 
 export default function ProductCheckout(props){
     const {removeFromCart, setCartItems} = useCartContext()
-
 
     function decreaseQuantity(id){
         setCartItems(cart => 
@@ -18,7 +17,6 @@ export default function ProductCheckout(props){
             )
         );
     }
-
     
     return(
             <div id="product-checkout">

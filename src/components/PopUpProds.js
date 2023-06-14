@@ -1,11 +1,10 @@
 import React from "react";
-import { useCartContext } from "./CartContext";
+import { useCartContext } from "../context/CartContext";
 
 export default function PopUpProds(props){
     const {removeFromCart} = useCartContext()
 
     return(
-
         <div id="pop-up-product">
             <img src={props.thumbnail} alt="Product"/>
             <div id="pop-up-details">

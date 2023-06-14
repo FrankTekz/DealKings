@@ -7,7 +7,6 @@ function CartProvider({children}){
 
     const [cartItems, setCartItems] = useState([])
     const [viewingCart, setViewCart] = useState(false)
-    
 
         function addToCart(selectedItem) {
             setCartItems(prevItems => [...prevItems, selectedItem])
