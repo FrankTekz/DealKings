@@ -17,12 +17,13 @@ disableScroll()
   return (
       <div id={viewingCart === true ? "disable-scroll" : null}>
         <Router>
+        <Router basename='/'>
           <Navbar/>
           <Routes>
               <Route element={<Homepage/>} path='/'/>
               <Route element={<Checkout/>} exact path='/checkout'/>
               <Route element={<ProductPage/>} path="/products/:productId"/>
-              <Route element={<Error/>} path='*' />
+              <Route element={<Error/>} path='/*' />
             </Routes>
           </Router>
       </div>
