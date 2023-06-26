@@ -29,7 +29,7 @@ export default function ProductCheckout(props){
                     </div>
                     <div id="control-quantity">
                         <p>Qty:</p>
-                        <button className="change-quantity" onClick={() => decreaseQuantity(props.id)}>-</button>
+                        <button className="change-quantity" onClick={props.quantity == 1 ? () => removeFromCart(props.id) : () => decreaseQuantity(props.id)}>-</button>
                         <p>{props.quantity}</p>
                         <button className="change-quantity" onClick={() => increaseQuantity(props.id)}>+</button>
                     </div>
