@@ -20,7 +20,7 @@ export default function ProductCheckout(props){
     
     return(
             <div id="product-checkout">
-                <img src={props.thumbnail} alt="my fauly gang"/>
+                <img src={props.thumbnail} alt=""/>
                 <div id="product-details-checkout">
                     <h2>{props.title}</h2>
                     <div id="price-remove">
