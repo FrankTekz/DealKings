@@ -6,6 +6,7 @@ import { useCartContext } from "./context/CartContext";
 import cartImg from './images/cartImage.png'
 import flowChart from './images/flowchart.png'
 import PopUpCart from "./components/PopUpCart";
+import DealKings from './images/DealKings.png'
 
 
 export default function Homepage(){
@@ -82,7 +83,10 @@ export default function Homepage(){
     return(
         <div>
             <div id="intro">
-            <img src={flowChart}/>
+                <div id="intro-text" >
+                    <h1>We save you money, so you can save time</h1>
+                    <p>this is where I am going to explain what this site is about, along with a slogan. Just wanna test what it would look like afterwards</p>
+                </div>
             </div>
             <h1 id="product-title">Products</h1>
             <div id="product-div">
