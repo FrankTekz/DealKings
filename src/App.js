@@ -5,6 +5,7 @@ import Homepage from './Homepage';
 import Checkout from './Checkout';
 import Navbar from './Navbar';
 import ProductPage from './ProductPage';
+import Products from './Products';
 import Error from './ErrorPage';
 import { useCartContext } from './context/CartContext';
 
@@ -20,6 +21,7 @@ disableScroll()
           <Navbar/>
           <Routes>
               <Route element={<Homepage/>} path='/'/>
+              <Route element={<Products/>} path='/products'/>
               <Route element={<Checkout/>} exact path='/checkout'/>
               <Route element={<ProductPage/>} path="/products/:productId"/>
               <Route element={<Error/>} path='*' />
