@@ -4,10 +4,21 @@ import ProductCheckout from "./components/ProductCheckout";
 import GridHero from "./components/GridHero";
 import { useCartContext } from "./context/CartContext";
 import { Link } from "react-router-dom";
-import LoadingBtn from "./components/LoadingBtn";
+import CheckoutForm from "./components/CheckoutForm";
+
+import { loadStripe } from "@stripe/stripe-js";
+import {
+  CardElement,
+  useStripe,
+  Elements,
+  useElements,
+} from "@stripe/react-stripe-js";
+import axios from "axios";
 
 export default function Checkout(){
     const {cartItems, finalDate, orderPlaced} = useCartContext()
+
+    const promise = loadStripe("pk_test_51NgvJSJg5VJlg7DkxS5SYeF6iL6Lo9DVT0CUpJn1M5lIXdSAwdMppcTItTFdHuq9DAXiSw803WXGzkxKUMpHKc56004iymZ2mQ");
 
     const cartProducts = cartItems.map(item => {
         return(
@@ -36,7 +47,10 @@ export default function Checkout(){
                     <GridHero/>
                     {cartProducts}
                 </div>
-                <CheckoutMenu/>  
+                <CheckoutMenu/>
+                {/* <Elements stripe={promise}>
+                    <CheckoutForm />
+                </Elements> */}
             </div>
         </div>
 
