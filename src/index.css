@@ -83,10 +83,6 @@ body{
   width: 7em;
 }
 
-#intro-text p{
-
-}
-
 #hp-img{
   height: 20em;
   width: 25em;
@@ -575,10 +571,6 @@ body{
 #checkout-labels{
   border-bottom: grey solid 1px;
   margin-top: 0;
-}
-
-#checkout-labels-inner > *, #product-details-checkout > *{
-  /* border: red solid 1px; */
 }
 
 #product-checkout img{
