@@ -59,7 +59,7 @@ export default function Checkout(){
             <div id="order-placed-menu">
                 <div id="order-placed-details">
                     <h2>Order Placed!</h2>
-                    <p>Your Order will be delivered on:</p>
+                    <p>Your order will be delivered on:</p>
                     <h3>{finalDate}</h3>
                 </div>
             </div>

@@ -1371,6 +1371,36 @@ button {
   margin-right: 8px;
 }
 
+#order-placed-div{
+  height: 80em;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(248, 243, 243);
+}
+
+#order-placed-details{
+  font-size: 2em;
+  display: flex;
+  padding: 0em 1em 0em 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#order-placed-details > *{
+  margin: .5em;
+}
+
+#empty-cart, #order-placed-div{
+  padding: 0em 0em 2em 0em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 73vh;
+}
+
 }
 
 
