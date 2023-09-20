@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 export default function ProductCheckout(props){
     const {removeFromCart, setCartItems} = useCartContext()
 
+    const firstLetterCap = props.title.charAt(0).toUpperCase()
+
+    const remainingTitle = props.title.substring(1)
+
     function decreaseQuantity(id){
         setCartItems(cart => 
             cart.map((item) => id === item.id ? {...item, quantity: item.quantity - 1} : item 
@@ -26,7 +30,7 @@ export default function ProductCheckout(props){
                     </Link>
             <div id="product-details-checkout">
                 <Link to={`/products/${props.id}`} id="checkout-link" >
-                    <p id="checkout-prod-title" >{props.title}</p>
+                    <p id="checkout-prod-title" >{firstLetterCap + remainingTitle}</p>
                 </Link>
                 <p>${props.price}</p>
                 <p>
