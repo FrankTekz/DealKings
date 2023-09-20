@@ -4,6 +4,10 @@ import { Link } from "react-router-dom"
 export default function ProductCard(props){
 
     let trueRating = Math.round(props.rating)
+
+    const firstLetterCap = props.title.charAt(0).toUpperCase()
+
+    const remainingTitle = props.title.substring(1)
   
     return(
         <div className="product-card" id={props.id}>
@@ -11,7 +15,7 @@ export default function ProductCard(props){
                     <img id="product-img" src={props.img} alt="IMAGE HERE"/>
                 </Link>
             <div id="product-details">
-                <h2>{props.title}</h2>
+                <h2>{firstLetterCap + remainingTitle}</h2>
                 <h4> ${props.price}</h4>
             </div>
     </div>

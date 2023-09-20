@@ -20,13 +20,13 @@ export default function ProductCheckout(props){
     }
     
     return(
-            <div id="product-checkout" >
+            <div id="product-checkout">
                 <Link to={`/products/${props.id}`} >
                         <img src={props.thumbnail} alt=""/>
                     </Link>
             <div id="product-details-checkout">
                 <Link to={`/products/${props.id}`} id="checkout-link" >
-                    <p>{props.title}</p>
+                    <p id="checkout-prod-title" >{props.title}</p>
                 </Link>
                 <p>${props.price}</p>
                 <p>
