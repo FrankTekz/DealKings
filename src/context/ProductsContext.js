@@ -14,6 +14,15 @@ function ProductsProvider({children}){
         { id: 5, checked: false, label: 'groceries' },
         { id: 6, checked: false, label:  'home-decoration' },
       ]);
+      const [modalStatus, setModalStatus] = useState(false)
+
+    const handleClose = () => {
+        setModalStatus(false);
+    };
+ 
+    const handleOpen = () => {
+        setModalStatus(true);
+    };
 
     async function getProductData() {
         const response = await fetch('https://dummyjson.com/products');
@@ -61,7 +70,7 @@ function ProductsProvider({children}){
 
 
     return(
-        <ProductsContext.Provider value={{productData, setData, displayedData, setDisplayedData, copyingData, selectedPrice, setSelectedPrice, handleChangePrice, categories, setCategories, clearFilters}}>
+        <ProductsContext.Provider value={{productData, setData, displayedData, setDisplayedData, copyingData, selectedPrice, setSelectedPrice, handleChangePrice, categories, setCategories, clearFilters, modalStatus, handleClose, handleOpen}}>
             {children}
         </ProductsContext.Provider>
     )

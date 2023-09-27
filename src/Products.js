@@ -4,13 +4,15 @@ import { useProductsContext } from './context/ProductsContext';
 import ProductCard from './components/ProductCard';
 import ProductColumn from './components/ProductColumn';
 import FilterMenu from './components/FilterMenu';
+import ModalMenu from './components/ModalMenu';
 import gridEmpty from './images/grid.png'
 import gridFilled from './images/gridFilled.png'
 import columnsFilled from './images/columns.png'
 import columnsEmpty from './images/columnsFilled.png'
+import Dialog from '@mui/material/Dialog';
 
 function Products() {
-    const {displayedData, setDisplayedData, productData, selectedPrice, categories, setCategories} = useProductsContext()
+    const {displayedData, setDisplayedData, productData, selectedPrice, categories, setCategories, modalStatus, handleClose, handleOpen} = useProductsContext()
     // const {cartItems, viewCart, viewingCart,} = useCartContext()
     const [gridOn, setGridOn] = useState(true)
     
@@ -92,8 +94,18 @@ function Products() {
                     />
                 <div id='product-orientation'>
                     <div id='orientation-options' >
-                        <img id={ gridOn ? 'gridFilled' : 'gridEmpty'} onClick={() => setGridOn(true)} src={ gridOn ? gridFilled : gridEmpty} />
-                        <img id={ gridOn ? 'columnsEmpty' :'columnsFilled'} onClick={() => setGridOn(false)} src={ gridOn ? columnsFilled : columnsEmpty  } />
+                        <img id={gridOn ? 'gridFilled' : 'gridEmpty'} onClick={() => setGridOn(true)} src={ gridOn ? gridFilled : gridEmpty}/>
+                        <img id={gridOn ? 'columnsEmpty' :'columnsFilled'} onClick={() => setGridOn(false)} src={ gridOn ? columnsFilled : columnsEmpty}/>
+                        <button id='modal-btn' onClick={handleOpen}>filters</button>
+                    <Dialog
+                        open={modalStatus}
+                        onClose={handleClose}
+                    >
+                        <ModalMenu
+                            categories={categories}
+                            changeChecked={handleChangeChecked}
+                        />
+                    </Dialog>
                     </div>
                     <div id={ gridOn ? 'grid-menu' : 'column-menu'} >
                         { displayedData.length == 0 ? <h1>NO PRODS</h1> : determineOrientation()}

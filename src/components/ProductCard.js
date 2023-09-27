@@ -8,6 +8,10 @@ export default function ProductCard(props){
     const firstLetterCap = props.title.charAt(0).toUpperCase()
 
     const remainingTitle = props.title.substring(1)
+
+    const trueTitle = firstLetterCap + remainingTitle
+
+    const shortTitle = trueTitle.substr(0,16)
   
     return(
         <div className="product-card" id={props.id}>
@@ -15,7 +19,7 @@ export default function ProductCard(props){
                     <img id="product-img" src={props.img} alt="IMAGE HERE"/>
                 </Link>
             <div id="product-details">
-                <h2>{firstLetterCap + remainingTitle}</h2>
+                <h2>{props.title.length > 18 ? shortTitle + '...' : trueTitle}</h2>
                 <h4> ${props.price}</h4>
             </div>
     </div>
