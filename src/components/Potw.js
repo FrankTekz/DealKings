@@ -5,7 +5,9 @@ import PotwCard from './PotwCard';
 function Potw(props) {
     const {productData} = useProductsContext()
 
-    const potwArr = productData.sort( () => Math.random() - 0.5).slice(0,6);
+    let mockData = productData
+
+    const potwArr = mockData.sort( () => Math.random() - 0.5).slice(0,6);
     console.log(potwArr)
 
     const potwCards = potwArr.map(product => {

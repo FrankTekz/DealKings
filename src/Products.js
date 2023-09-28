@@ -9,6 +9,7 @@ import gridEmpty from './images/grid.png'
 import gridFilled from './images/gridFilled.png'
 import columnsFilled from './images/columns.png'
 import columnsEmpty from './images/columnsFilled.png'
+import filterImg from './images/filter.png'
 import Dialog from '@mui/material/Dialog';
 
 function Products() {
@@ -94,9 +95,12 @@ function Products() {
                     />
                 <div id='product-orientation'>
                     <div id='orientation-options' >
-                        <img id={gridOn ? 'gridFilled' : 'gridEmpty'} onClick={() => setGridOn(true)} src={ gridOn ? gridFilled : gridEmpty}/>
-                        <img id={gridOn ? 'columnsEmpty' :'columnsFilled'} onClick={() => setGridOn(false)} src={ gridOn ? columnsFilled : columnsEmpty}/>
-                        <button id='modal-btn' onClick={handleOpen}>filters</button>
+                        <div id='orient-icons' >
+                            <img id={gridOn ? 'gridFilled' : 'gridEmpty'} onClick={() => setGridOn(true)} src={ gridOn ? gridFilled : gridEmpty}/>
+                            <img id={gridOn ? 'columnsEmpty' :'columnsFilled'} onClick={() => setGridOn(false)} src={ gridOn ? columnsFilled : columnsEmpty}/>
+                        </div>
+                        <img id='modal-btn' onClick={handleOpen} src={filterImg} />
+                        
                     <Dialog
                         open={modalStatus}
                         onClose={handleClose}

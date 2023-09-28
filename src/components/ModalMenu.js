@@ -11,6 +11,7 @@ export default function ModalMenu({changeChecked}){
     
     return(
         <div id="modal-menu">
+            <div id="apply-filters" onClick={handleClose} >X</div>
             <h1>Filters</h1>
             <div id="category-li">
                 <h3>Category</h3>
@@ -34,7 +35,6 @@ export default function ModalMenu({changeChecked}){
                 />
             </div>
             <button id="clear-filters" onClick={clearFilters} >clear filters</button>
-            <button onClick={handleClose} >apply filters</button>
         </div>
     )
 }
