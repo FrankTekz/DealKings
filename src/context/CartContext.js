@@ -1,6 +1,5 @@
 import React, {useContext, useState} from "react"
 
-
 const CartContext = React.createContext()
 
 function CartProvider({children}){
@@ -22,13 +21,10 @@ function CartProvider({children}){
             setCartItems([])
         }
 
+        //delivery date
         const date = new Date();
-        date.setDate(date.getDate() + 4)     
-        let deliveryWeekday = date.toLocaleString('default', {weekday: 'long'})
-        let deliveryDate = date.toLocaleString('default', {month: 'long'})
-        let numericDay = date.getDay()
-
-        let finalDate = deliveryWeekday + ', ' + deliveryDate + ' ' + numericDay
+        date.setDate(date.getDate() + 5)
+        let finalDate = date.toString().match(/\b[\w']+(?:[^\w\n]+[\w']+){0,2}\b/g)[0]
 
         
 

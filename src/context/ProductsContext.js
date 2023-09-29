@@ -6,6 +6,7 @@ function ProductsProvider({children}){
     const [productData, setData] = useState([])
     const [displayedData, setDisplayedData] = useState(productData)
     const [selectedPrice, setSelectedPrice] = useState(1749)
+    const [modalStatus, setModalStatus] = useState(false)
     const [categories, setCategories] = useState([
         { id: 1, checked: false, label: 'smartphones' },
         { id: 2, checked: false, label: 'laptops' },
@@ -14,7 +15,6 @@ function ProductsProvider({children}){
         { id: 5, checked: false, label: 'groceries' },
         { id: 6, checked: false, label:  'home-decoration' },
       ]);
-      const [modalStatus, setModalStatus] = useState(false)
 
     const handleClose = () => {
         setModalStatus(false);
