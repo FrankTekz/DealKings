@@ -1,59 +1,49 @@
-import React, {useState} from 'react';
-import { useCartContext } from '../context/CartContext';
-import LoadingBtn from './LoadingBtn';
+import React, { useState } from "react";
+import { useCartContext } from "../context/CartContext";
+import LoadingBtn from "./LoadingBtn";
 
 function CheckoutMenu(props) {
-    const {setOrderPlaced, emptyCart, cartItems} = useCartContext()
-    const [buttonClicked, setButtonClick] = useState(false)
+    const { setOrderPlaced, emptyCart, cartItems } = useCartContext();
+    const [buttonClicked, setButtonClick] = useState(false);
 
-    let sum = 0 
+    // Calculate total cost using reduce() & fix floating-point precision
+    const subtotal = cartItems
+        .reduce((acc, item) => acc + item.price * item.quantity, 0)
+        .toFixed(2); // Rounds to 2 decimal places
 
-    function calculateCost(){
-        cartItems.map(item => {
-            let combinedPrice = item.price * item.quantity
-            sum += combinedPrice
-        })
-        return(sum)
+    const shippingCost = 10.0;
+    const grandTotal = (parseFloat(subtotal) + shippingCost).toFixed(2); // Ensures correct decimal precision
+
+    function placeOrder() {
+        setButtonClick(true);
+        setTimeout(() => {
+            emptyCart();
+            setOrderPlaced(true);
+        }, 2500);
     }
 
-function placeOrder(){
-    setButtonClick(true)
-    setTimeout(() => {
-        emptyCart()
-        setOrderPlaced(true)
-    }, 2500);
-}
-        
-const orderBtn = 
-    <button id="place-order" onClick={placeOrder}>Place Order</button>
-
-
-    const cartQuantity = cartItems.map(item => Number(item.quantity))
-
-    let sumQuantity = 0
-
-    const finalQuantity = cartQuantity.forEach(quantity =>  sumQuantity += quantity)
-
-    const totalItems = sumQuantity >  1 ? `(${sumQuantity} items)` : `(1 item)`
+    // Calculate total quantity using reduce()
+    const totalItemsCount = cartItems
+        .reduce((acc, item) => acc + Number(item.quantity), 0);
+    const totalItems = totalItemsCount > 1 ? `(${totalItemsCount} items)` : `(1 item)`;
 
     return (
         <div id="checkout-menu">
             <div id="checkout-menu-details">
-                    <div className='checkout-menu-divs' >
-                        <h4>Subtotal {totalItems}:</h4>
-                        <p>${calculateCost()}.00</p>
-                    </div>
-                    <div className='checkout-menu-divs' >
-                        <h4>Shipping:</h4>
-                        <p>$10.00</p>
-                    </div>
-                    <div className='checkout-menu-divs' id='grand-total' >
-                        <strong>Total:</strong>
-                        <strong>${sum + 10}.00</strong>
-                    </div>
-                    {/* {sum > 50 ? <p id="discount" >Discount: -$10.00</p> : null} */}
+                <div className="checkout-menu-divs">
+                    <h4>Subtotal {totalItems}:</h4>
+                    <p>${subtotal}</p>
+                </div>
+                <div className="checkout-menu-divs">
+                    <h4>Shipping:</h4>
+                    <p>${shippingCost.toFixed(2)}</p>
+                </div>
+                <div className="checkout-menu-divs" id="grand-total">
+                    <strong>Total:</strong>
+                    <strong>${grandTotal}</strong>
+                </div>
             </div>
-            {buttonClicked ? <LoadingBtn/> : orderBtn }
+            {buttonClicked ? <LoadingBtn /> : <button id="place-order" onClick={placeOrder}>Place Order</button>}
         </div>
     );
 }
