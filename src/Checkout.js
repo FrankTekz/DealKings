@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import CheckoutMenu from "./components/CheckoutMenu";
 import ProductCheckout from "./components/ProductCheckout";
 import GridHero from "./components/GridHero";

@@ -97,7 +97,7 @@ function checkCart(){
                 <p id="prod-category" ><strong>Category:</strong> {thisProduct.category}</p>
                 <div id="add-cart-div">
                     <div id="pp-quantity" >
-                        <p onClick={ newQuantity == 1 ? null : decreaseQuantity}>-</p>
+                        <p onClick={ newQuantity === 1 ? null : decreaseQuantity}>-</p>
                         <p id="pp-qnumber" >{newQuantity}</p>
                         <p onClick={increaseQuantity}>+</p>
                     </div>
