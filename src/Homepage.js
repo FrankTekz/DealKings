@@ -15,7 +15,7 @@ export default function Homepage(){
                     </p>
                 </div>
                 <div id="hp-img" >
-                    <img src={homepageImg}/>
+                    <img src={homepageImg} alt=""/>
                 </div>
             </div>
             <Potw/>

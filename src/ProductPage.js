@@ -13,8 +13,9 @@ export default function ProductPage(){
     const {addToCart, cartItems, setCartItems} = useCartContext()
     const [newQuantity, setNewQuantity] = useQuantity()
     const [itemAdded, setItemAdded] = useItemAdded()
-    const thisProduct = productData.find((product) => product.id == productId)
-    const [thumbnail, setThumbnail] = useState(thisProduct.images[0])
+    const thisProduct = productData.find((product) => product.id === Number(productId))
+    const [thumbnail, setThumbnail] = useState(thisProduct ? thisProduct.images[0] : '');
+
 
     const firstLetterCap = thisProduct.title.charAt(0).toUpperCase()
 
