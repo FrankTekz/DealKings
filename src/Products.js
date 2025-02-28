@@ -16,13 +16,11 @@ function Products() {
     const {displayedData, setDisplayedData, productData, selectedPrice, categories, setCategories, modalStatus, handleClose, handleOpen} = useProductsContext()
     // const {cartItems, viewCart, viewingCart,} = useCartContext()
     const [gridOn, setGridOn] = useState(true)
-    console.log(productData)
     const handleChangeChecked = (id) => {
         const catStateList = categories;
         const changeCheckedCats = catStateList.map((item) =>
           item.id === id ? { ...item, checked: !item.checked } : item
         );
-        console.log(categories)
         setCategories(changeCheckedCats);
       };
 

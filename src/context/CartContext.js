@@ -9,8 +9,6 @@ function CartProvider({children}){
 
         function addToCart(selectedItem) {
             setCartItems(prevItems => [...prevItems, selectedItem])
-            
-            console.log(cartItems)
         }
 
         function removeFromCart(id) {

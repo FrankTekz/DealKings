@@ -22,11 +22,11 @@ export default function ProductPage(){
 
     
     const lorem = 
-    <p> 
+    <span> 
         {thisProduct.description} Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         Commodo elit at imperdiet dui accumsan sit.
-    </p>
+    </span>
 
 function checkCart(){
             setCartItems(cart => 
@@ -56,17 +56,18 @@ function checkCart(){
 
             const splicedImg = thisProduct.images.slice(0,-1)
 
-            const poppedImages = splicedImg.map(image => {
-                return(
-                    <img className="change-image" src={image} onClick={imageSrc} alt=''/>
-                    )
-                })
+            const poppedImages = splicedImg.map((image, index) => {
+                return (
+                    <img className="change-image" src={image} key={image || index} onClick={imageSrc} alt=''/>
+                );
+            });
             
-            const productImages = thisProduct.images.map(image => {
-                return(
-                    <img className="change-image" src={image} onClick={imageSrc} alt=''/>
-                    )
-                })
+            const productImages = thisProduct.images.map((image, index) => {
+                return (
+                    <img className="change-image" src={image} key={image || index} onClick={imageSrc} alt=''/>
+                );
+            });
+            
 
     function decreaseQuantity(){
         setNewQuantity(prevState => prevState - 1)
