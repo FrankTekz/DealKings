@@ -291,6 +291,18 @@ body{
   /* border: 2px solid green; */
 }
 
+.no-products-message {
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;  /* Centers vertically */
+  text-align: center;
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  font-size: 1em;
+  font-weight: bold;
+}
+
+
 #column-menu{
   display: flex;
   flex-direction: column;

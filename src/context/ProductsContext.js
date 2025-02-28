@@ -5,15 +5,13 @@ const ProductsContext = React.createContext()
 function ProductsProvider({children}){
     const [productData, setData] = useState([])
     const [displayedData, setDisplayedData] = useState(productData)
-    const [selectedPrice, setSelectedPrice] = useState(1749)
+    const [selectedPrice, setSelectedPrice] = useState(5000)
     const [modalStatus, setModalStatus] = useState(false)
     const [categories, setCategories] = useState([
-        { id: 1, checked: false, label: 'smartphones' },
-        { id: 2, checked: false, label: 'laptops' },
+        { id: 1, checked: false, label: 'beauty' },
         { id: 3, checked: false, label: 'fragrances' },
-        { id: 4, checked: false, label: 'skincare' },
+        { id: 4, checked: false, label: 'furniture' },
         { id: 5, checked: false, label: 'groceries' },
-        { id: 6, checked: false, label:  'home-decoration' },
       ]);
 
     const handleClose = () => {
@@ -56,14 +54,12 @@ function ProductsProvider({children}){
 
     function clearFilters(){
         setDisplayedData(productData)
-        setSelectedPrice(1749)
+        setSelectedPrice(5000)
         setCategories([
-            { id: 1, checked: false, label: 'smartphones' },
-            { id: 2, checked: false, label: 'laptops' },
+            { id: 1, checked: false, label: 'beauty' },
             { id: 3, checked: false, label: 'fragrances' },
-            { id: 4, checked: false, label: 'skincare' },
+            { id: 4, checked: false, label: 'furniture' },
             { id: 5, checked: false, label: 'groceries' },
-            { id: 6, checked: false, label:  'home-decoration' },
           ])
         }
     

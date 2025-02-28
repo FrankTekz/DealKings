@@ -16,7 +16,7 @@ function Products() {
     const {displayedData, setDisplayedData, productData, selectedPrice, categories, setCategories, modalStatus, handleClose, handleOpen} = useProductsContext()
     // const {cartItems, viewCart, viewingCart,} = useCartContext()
     const [gridOn, setGridOn] = useState(true)
-    
+    console.log(productData)
     const handleChangeChecked = (id) => {
         const catStateList = categories;
         const changeCheckedCats = catStateList.map((item) =>
@@ -110,9 +110,15 @@ function Products() {
                             changeChecked={handleChangeChecked}
                         />
                     </Dialog>
-                    </div>
-                    <div id={ gridOn ? 'grid-menu' : 'column-menu'} >
-                        { displayedData.length == 0 ? <h1>NO PRODS</h1> : determineOrientation()}
+                        <div id={gridOn && displayedData.length > 0 ? 'grid-menu' : 'column-menu'}>
+                            {displayedData.length === 0 ? (
+                                <div className="no-products-message">
+                                    <h1>No products match your search filters</h1>
+                                </div>
+                            ) : (
+                                <>{determineOrientation()}</>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import { useProductsContext } from "../context/ProductsContext";
 
 
 
-export default function FilterMenu({ changeChecked}){
+export default function FilterMenu({changeChecked}){
     const {selectedPrice, handleChangePrice, clearFilters, categories} = useProductsContext()
     
     return(
@@ -29,8 +29,10 @@ export default function FilterMenu({ changeChecked}){
                 <Slider
                     onChange={handleChangePrice}
                     value={selectedPrice}
-                    min={13}
-                    max={1749}
+                    min={0}
+                    max={5000}
+                    
+                    step={100}
                 />
             </div>
             <button id="clear-filters" onClick={clearFilters} >clear filters</button>
