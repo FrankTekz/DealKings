@@ -1,6 +1,5 @@
 import React from 'react';
 import { Checkbox } from 'pretty-checkbox-react'
-import { useProductsContext } from '../context/ProductsContext';
 
 export default function CheckboxProton({changeChecked, category}){
     const {checked, label, id} = category

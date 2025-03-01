@@ -1,9 +1,8 @@
 import React from "react";
-import { useCartContext } from "../context/CartContext";
-import { Link } from "react-router-dom";
+
 
 export default function GridHero(props){
-    const {removeFromCart, setCartItems} = useCartContext()
+
     
     return(
             <div id="checkout-labels">
