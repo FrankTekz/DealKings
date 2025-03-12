@@ -777,6 +777,10 @@ button {
     height: 23em;
   }
 
+  #intro-text{
+    margin-left: 1.5em;
+  }
+  
   #intro-text h1 {
     font-size: 1.7em;
   }
