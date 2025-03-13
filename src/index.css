@@ -787,6 +787,7 @@ button {
 
   #hp-img {
     width: 20em;
+    margin-right: 1em;
   }
 
   #checkout-menu {
@@ -794,8 +795,16 @@ button {
   }
 
   #filter-menu {
-    margin-right: 2em;
+    left: 0;
+    width: 25vw;
   }
+
+  #grid-menu{
+    width: 100vw;
+    gap: 0em;
+  }
+
+
 
   #cart-menu {
     height: 55vh;
@@ -808,6 +817,11 @@ button {
     width: 16em;
     padding-top: 1.77em;
   }
+
+/* filter-menu {
+    width: 20em;
+    height: 35em;
+  } */
 
   #product-details {
     font-size: 0.9em;
@@ -850,11 +864,12 @@ button {
   }
 
   #checkout-inner-div {
-    width: 78em;
+    width: 90vw;
   }
 
   #product-flex-column {
-    width: 60vw;
+    width: 50em;
+
   }
 
   #product-checkout,
@@ -863,7 +878,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 820px) {
   #navbar {
     width: 100%;
     display: flex;
