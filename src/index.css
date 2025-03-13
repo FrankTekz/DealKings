@@ -797,6 +797,7 @@ button {
   #filter-menu {
     left: 0;
     width: 25vw;
+    height: 38em;
   }
 
   #grid-menu{
@@ -818,10 +819,9 @@ button {
     padding-top: 1.77em;
   }
 
-/* filter-menu {
-    width: 20em;
-    height: 35em;
-  } */
+#filter-menu {
+    margin-bottom: 1em;
+  }
 
   #product-details {
     font-size: 0.9em;
