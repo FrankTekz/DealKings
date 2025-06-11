@@ -950,7 +950,8 @@ button {
     height: 20.3em;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    justify-content: center;
     color: #384267;
     font-size: 2em;
     letter-spacing: 2px;
@@ -983,13 +984,14 @@ button {
     width: 13em;
     /* border: red solid 1px; */
     padding: 0.5em;
+    margin: 0;
   }
 
-  #hp-img img {
+  /* #hp-img img {
     object-fit: contain;
     height: 100%;
     width: 100%;
-  }
+  } */
 
   #potw-div {
     display: flex;
