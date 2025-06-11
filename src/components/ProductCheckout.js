@@ -25,6 +25,9 @@ export default function ProductCheckout(props) {
     );
   }
 
+  // Calculate subtotal for the product
+  const subtotal = (props.price * props.quantity).toFixed(2);
+
   return (
     <div id="product-checkout">
       <Link to={`/products/${props.id}`}>
@@ -54,7 +57,7 @@ export default function ProductCheckout(props) {
             +
           </strong>
         </p>
-        <p id="subtotal">${props.price * props.quantity}</p>
+        <p id="subtotal">${subtotal}</p>
       </div>
       <div id="price-remove">
         <p id="remove-cart" onClick={() => removeFromCart(props.id)}>
